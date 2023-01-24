@@ -1,11 +1,17 @@
 import './App.css';
-import RenderButtons from './components/Buttons';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+
 
 function App() {
+  
   return (
     <div>
-        <RenderButtons />
-
+      <div id="header">
+        <Navbar />
+      </div>
+      <div id="page">
+      </div>
     </div>
   );
 }
