@@ -37,6 +37,10 @@
   }
 }
 
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
 .navbar_buttons {
   font-size: 25px;
   margin-top: 20px;
