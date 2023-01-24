@@ -1,0 +1,155 @@
+/* eslint-disable no-undef */
+const Animals = [
+  {
+    name: 'Gary',
+    image: '../images/puppy1.jpg',
+    age: '2 years',
+    //handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Lizzie',
+    image: 'puppy2.jpg',
+    age: '1 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Bucket',
+    image: 'puppy3.jpg',
+    age: '4 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Morgan',
+    image: 'puppy4.jpg',
+    age: '3 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Starling',
+    image: 'puppy5.jpg',
+    age: '2 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Georgie',
+    image: 'puppy6.jpg',
+    age: '1 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Peanut',
+    image: 'puppy7.jpg',
+    age: '2 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'John and Jane',
+    image: 'puppy8.jpg',
+    age: '1 year',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Lady Doran the Second',
+    image: 'kitty1.jpg',
+    age: '5 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Mr Void',
+    image: 'kitty2.jpg',
+    age: '2 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Marshmallow',
+    image: 'kitty3.jpg',
+    age: '1 year',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Tabby',
+    image: 'kitty4.jpg',
+    age: '2 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Monsieur',
+    image: 'kitty5.jpg',
+    age: '4 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Babe',
+    image: 'hamster1.jpg',
+    age: '9 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Clementine',
+    image: 'hamster2.jpg',
+    age: '15 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Little Blob',
+    image: 'hamster3.jpg',
+    age: '13 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Stardust',
+    image: 'hamster4.jpg',
+    age: '18 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Holly',
+    image: 'hamster5.jpg',
+    age: '13 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Button',
+    image: 'hamster6.jpg',
+    age: '15 months',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Molly',
+    image: 'bunny1.jpg',
+    age: '1 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Carroline',
+    image: 'bunny2.jpg',
+    age: '2 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Toast',
+    image: 'bunny3.jpg',
+    age: '4 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Daisy and Goldie',
+    image: 'bunny4.jpg',
+    age: '3 years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Angel',
+    image: 'bunny5.jpg',
+    age: '2 and a half years',
+    handle: (e) => {ThankYou(e)},
+  },
+  {
+    name: 'Hazel',
+    image: 'bunny6.jpg',
+    age: '2 years',
+    handle: (e) => {ThankYou(e)},
+  },
+]
+
+export default Animals;
