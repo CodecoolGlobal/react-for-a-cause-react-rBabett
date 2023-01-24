@@ -1,21 +1,24 @@
+import { useState } from 'react';
+
 function RenderButtons() {
-  const buttons = [
-    {
-      name: 'Donate',
-    },
-    {
-      name: 'About',
-    },
-    {
-      name: 'Contact',
-    },
-    {
-      name: 'Gallery',
-    }
-  ]
+  const buttons = ['Donate', 'About', 'Contact', 'Gallery', 'Home']
 
-  return buttons.map((button) => <button className="header_buttons" id={button.name}>{button.name}</button>);
+  const [headerName, setheaderName] = useState('Home');
 
+  const filteredButtons= buttons.filter(button => button !== headerName)
+
+  const headerButtons = filteredButtons.map((button) => <button className="header_buttons" id={button} onClick={ChangePage}>{button}</button>);
+
+  function ChangePage(event) {
+    setheaderName(event.target.id);
+  };
+  
+  return (
+    <div id="header">
+      <h2>{headerName}</h2>
+      <div>{headerButtons}</div>
+    </div>
+  )
 }
 
 export default RenderButtons;
