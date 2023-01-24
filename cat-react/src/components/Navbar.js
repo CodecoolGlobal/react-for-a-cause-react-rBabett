@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
 import Button from './Button'
-import Contact from './Contact'
 
 const Navbar = ({handleClick}) => {
 
