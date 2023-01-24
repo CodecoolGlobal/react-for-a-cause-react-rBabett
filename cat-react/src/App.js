@@ -6,9 +6,6 @@ import { useState } from 'react';
 
 function App() {
   const [ActivePage, setActivePage] = useState('Home');
-  if (ActivePage === 'Gallery') {
-    console.log('Gallery')
-  }
   
   return (
     <div>
@@ -16,8 +13,11 @@ function App() {
         <Navbar handleClick={setActivePage}/>
       </div>
       <div id="page">
-        {(ActivePage === 'Gallery') ?
-          (<div>Hello</div>) : (<div>Nem hello</div>)
+        {(ActivePage === 'About') ? (<div>About component</div>) 
+        : (ActivePage === 'Donate') ? (<div>Donate component</div>)
+        : (ActivePage === 'Gallery') ? (<div>Gallery component</div>)
+        : (ActivePage === 'Contact') ? (<div>Contact component</div>)
+        : (<div>Home</div>)
         }
       </div>
     </div>
