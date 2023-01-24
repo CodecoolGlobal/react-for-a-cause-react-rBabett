@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import './App.css';
-import Contact from './components/Contact';
-import Button from './components/Button';
 import Navbar from './components/Navbar';
+
 
 
 function App() {
@@ -15,6 +15,6 @@ function App() {
       </div>
     </div>
   );
-}
+} 
 
 export default App;

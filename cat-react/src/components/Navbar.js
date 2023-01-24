@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import Contact from './Contact'
 
 const Navbar = () => {
 
