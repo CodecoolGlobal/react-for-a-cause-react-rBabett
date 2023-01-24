@@ -27,13 +27,8 @@ const Navbar = ({handleClick}) => {
     },
   ]
 
-  //console.log(ActivePage);
 
-  const headerButtons = buttons.map(button => (<Button key={button.name} className="navbar_buttons" text={button.name} handleClick={button.handle}/>))
-  
-  /* const ChangeActivePage = (e) => {
-    setActivePage(e.target.innerText);
-  }; */
+  const headerButtons = buttons.map(button => (<Button key={button.name} className='navbar_buttons' text={button.name} handleClick={button.handle}/>))
   
   return (
     <div id="header">
