@@ -1,21 +1,27 @@
 import AnimalCard from './AnimalCard';
-import Animals from './AnimalsObject';
+import {useEffect, useState} from 'react';
+import animals from './AnimalsObject';
 
 const Gallery = () => {
+  const [images, setImages] = useState([]);
 
-  const animalCards = Animals.map(animal => (<AnimalCard key={animal.name} name={animal.name} age={animal.age} handleClick={animal.imagehandle} />))
+  useEffect(() => {
+    Promise.all(animals.map((animal) => {
+      return import(`../images/${animal.image}`)
+    })).then((images) => {
+      setImages(images.map((image, index) => {
+        return {...animals[index], image:image.default}
+      }))
+    })
+  }, [])
+
+  console.log(images);
 
   return (
     <div id="animals">
-      <div>{animalCards}</div>
+        <AnimalCard animals={images}/>
     </div>
   )
 }
-
-/* const ThankYou = (e) => {
-  //Thank you for adopting e.target.innerText! (animal.name)
-  console.log(e.target.innerText)
-} */
-
 
 export default Gallery;

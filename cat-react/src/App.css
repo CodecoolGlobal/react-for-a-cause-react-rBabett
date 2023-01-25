@@ -55,3 +55,12 @@ body {
   margin: 20px;
   justify-content: flex-end;
 }
+
+.animal_cards_info {
+  margin: 20px;
+  padding: 10px;
+  border-style: double;
+  border-radius: 20px;
+  text-align: left;
+  max-width: 30%;
+}
