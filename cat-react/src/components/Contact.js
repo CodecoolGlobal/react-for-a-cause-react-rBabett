@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Input from "./Input";
 import { useState } from 'react';
+import About from "./About";
 
 
 function Contact(){
@@ -10,115 +11,129 @@ function Contact(){
   const [subjectInput, setSubjectInput] = useState('');
   const [messageInput, setMessageInput] = useState('');
 
-  /* const [error, setError] = useState(true); */
-  const [firstNameError, setFirstNameError] = useState(false);
-  const [lastNameError, setLastNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [subjectError, setSubjectError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
+  let firstNameOriginal = 'Hannibal';
+  let lastNameOriginal = 'Lecter';
+  let emailOriginal = 'hannibal.lecter@freshmeat.com';
+  let subjectOriginal = 'Job inquiry';
+  let messageOriginal = 'I have a question: Do you have any cute animal?'
+
+  const [firstNameExist, setFirstNameExist] = useState(firstNameOriginal);
+  const [lastNameExist, setLastNameExist] = useState(lastNameOriginal);
+  const [emailExist, setEmailExist] = useState(emailOriginal);
+  const [subjectExist, setSubjectExist] = useState(subjectOriginal);
+  const [messageExist, setMessageExist] = useState(messageOriginal);
+
 
   const [submitPage, setSubmitPage] = useState(false);
 
-  let error = true;
+  let empty = true;
+
 
   const contactInputs = [{
-    placeholder: "Hannibal",
+    name: 'First Name',
+    placeholder: firstNameExist,
     size: 24,
     value: firstNameInput,
+    change: (e) => setFirstNameExist(e),
     onInput: (e) => setFirstNameInput(e.target.value),
   }, {
-    placeholder: "Lecter",
+    name: 'Last Name',
+    placeholder: lastNameExist,
     size: 24,
     value: lastNameInput,
+    change: (e) => setLastNameExist(e),
     onInput: (e) => setLastNameInput(e.target.value),
   }, {
-    placeholder: "hannibal.lecter@freshmeat.com",
+    name: 'E-mail',
+    placeholder: emailExist,
     size: 24,
     value: emailInput,
+    change: (e) => setEmailExist(e),
     onInput: (e) => setEmailInput(e.target.value),
   }, {
-    placeholder: "Job inquiry",
+    name: 'Subject',
+    placeholder: subjectExist,
     size: 24,
     value: subjectInput,
+    change: (e) => setSubjectExist(e),
     onInput: (e) => setSubjectInput(e.target.value),
   }, {
-    placeholder: "I have a question: Do you have any cute animal?",
+    name: 'Message',
+    placeholder: messageExist,
     size: 24,
     value: messageInput,
+    change: (e) => setMessageExist(e),
     onInput: (e) => setMessageInput(e.target.value),
   }];
 
+  let firstNameInputField = <Input placeholder={contactInputs[0].placeholder} size={contactInputs[0].size} value={contactInputs[0].value} onInput={contactInputs[0].onInput} className="contactInput"/>
+  let lastNameInputField = <Input placeholder={contactInputs[1].placeholder} size={contactInputs[1].size} value={contactInputs[1].value} onInput={contactInputs[1].onInput} className="contactInput" />;
+  let emailInputField = <Input placeholder={contactInputs[2].placeholder} size={contactInputs[2].size} value={contactInputs[2].value} onInput={contactInputs[2].onInput} className="contactInput"/>;
+  let subjectInputField = <Input placeholder={contactInputs[3].placeholder} size={contactInputs[3].size} value={contactInputs[3].value} onInput={contactInputs[3].onInput} className="contactInput"/>;
+  let messageInputField = <Input placeholder={contactInputs[4].placeholder} size={contactInputs[4].size} value={contactInputs[4].value} onInput={contactInputs[4].onInput} className="contactMessageInput"/>;
+  
   let filteredValue = contactInputs.filter(input => (input.value));
 
-  if (filteredValue.length === 5) {
-    error = false;
+  if (filteredValue.length === contactInputs.length) {
+    empty = false;
   }
  
-  let firstNameInputField = <Input placeholder={contactInputs[0].placeholder} size={contactInputs[0].size} value={contactInputs[0].value} onInput={contactInputs[0].onInput} />
-  let lastNameInputField = <Input placeholder={contactInputs[1].placeholder} size={contactInputs[1].size} value={contactInputs[1].value} onInput={contactInputs[1].onInput} />;
-  let emailInputField = <Input placeholder={contactInputs[2].placeholder} size={contactInputs[2].size} value={contactInputs[2].value} onInput={contactInputs[2].onInput} />;
-  let subjectInputField = <Input placeholder={contactInputs[3].placeholder} size={contactInputs[3].size} value={contactInputs[3].value} onInput={contactInputs[3].onInput} />;
-  let messageInputField = <Input placeholder={contactInputs[4].placeholder} size={contactInputs[4].size} value={contactInputs[4].value} onInput={contactInputs[4].onInput} />;
-  
   let content = 
-    <><p>First Name:</p>
+    <div className="contacform"><p>First Name:</p>
     {firstNameInputField}
-    {(firstNameError === true) ? <div>Please fill first name section</div> : <div></div>}
     <p>Last Name:</p>
     {lastNameInputField}
-    {(lastNameError === true) ? <div>Please fill last name section</div> : <div></div>}
     <p>E-mail:</p>
     {emailInputField}
-    {(emailError === true) ? <div>Please fill e-mail section</div> : <div></div>}
     <p>Subject:</p>
     {subjectInputField}
-    {(subjectError === true) ? <div>Please fill subject section</div> : <div></div>}
     <p>Message:</p>
     {messageInputField}
-    {(messageError === true) ? <div>Please say something</div> : <div></div>}
     <br></br>
     <br></br>
-    <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></>;
+    <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
 
 
   function submitKey() {
 
-    if (firstNameInput === '') {
-      setFirstNameError(true)
-    } else {
-      setFirstNameError(false);
+    for (let i = 0; i < contactInputs.length; i++){
+
+      let legitEmail = contactInputs[2].value;
+
+      
+      if (contactInputs[i].value === '') {
+        Object.values(contactInputs[i])[4](`Please fill ${contactInputs[i].name} section`);
+      }
+      
+      if (
+        legitEmail !== '' && ( 
+        legitEmail.includes('@') === false ||
+        legitEmail.indexOf('@') < 4 ||
+        legitEmail.includes('.') === false ||
+        legitEmail.indexOf('.') !== contactInputs[2].value.length - 4 ||
+        legitEmail.match(/[A-Z]/) !== null)
+        ){
+        setEmailInput('');
+        Object.values(contactInputs[2])[4](`Please give me a legit e-mail`)
+      }
     }
 
-    if (lastNameInput === '') {
-      setLastNameError(true)
-    } else {
-      setLastNameError(false);
-    }
-
-    if (emailInput === '') {
-      setEmailError(true)
-    } else {
-      setEmailError(false);
-    }
-
-    if (subjectInput === '') {
-      setSubjectError(true)
-    } else {
-      setSubjectError(false);
-    }
-
-    if (messageInput === '') {
-      setMessageError(true)
-    } else {
-      setMessageError(false);
-    }
-
-    if (error === false) {
+    if (empty === false) {
       setSubmitPage(true);
   
       setTimeout(() => {
-        setSubmitPage(false)
-      }, 10000);
+        setSubmitPage(false);
+        setFirstNameInput('');
+        setLastNameInput('');
+        setEmailInput('');
+        setSubjectInput('');
+        setMessageInput('');
+        setFirstNameExist(firstNameOriginal);
+        setLastNameExist(lastNameOriginal);
+        setEmailExist(emailOriginal);
+        setSubjectExist(subjectOriginal);
+        setMessageExist(messageOriginal);
+      }, 3000);
     } 
 
   } 
