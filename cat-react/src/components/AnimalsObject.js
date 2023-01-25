@@ -1,6 +1,6 @@
 //function AnimalList() {
 
-  const Animals = [
+  const animals = [
     {
       name: 'Gary',
       image: 'puppy1.jpg',
@@ -129,7 +129,7 @@
   ];
 
 
-export default Animals;
+export default animals;
 
 /*   return Animals;
 };

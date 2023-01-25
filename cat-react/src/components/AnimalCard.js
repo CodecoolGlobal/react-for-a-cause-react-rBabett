@@ -11,13 +11,15 @@ const AnimalCard = ({ animals }) => {
             alt={name}
             className="images"
           />
-          <h4>{name}</h4>
-          <p>Age: {age}</p>
-          <Button
-            key={name + "btn"}
-            className="submit_buttons"
-            text="Adopt"
-          />
+          <div clasName="animal_info">
+            <h4>{name}</h4>
+            <p>Age: {age}</p>
+            <Button
+              key={name + "btn"}
+              className="submit_buttons"
+              text="Adopt"
+            />
+          </div>
         </div>
       ))}
     </div>

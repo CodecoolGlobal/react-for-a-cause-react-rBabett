@@ -18,7 +18,7 @@ const Gallery = () => {
   console.log(images);
 
   return (
-    <div id="animals">
+    <div id="animals_container">
         <AnimalCard animals={images}/>
     </div>
   )
