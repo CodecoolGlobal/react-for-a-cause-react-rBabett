@@ -138,6 +138,28 @@ body {
 .article_info {
   overflow: hidden;
   float: right;
-  background: linear-gradient(to bottom, rgb(181, 190, 255), rgb(161, 255, 202));
+  background: linear-gradient(to bottom, rgb(152, 191, 255), rgb(148, 255, 194));
   
 }
+
+.titles {
+  font-size: 30px;
+  text-align: center;
+  
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #5dacec; /* the color */
+
+  margin-left: 30%;
+  margin-right: 30%;
+  color: white;
+  text-shadow: 2px 2px 7.5px black;
+  padding-bottom: var(--s);
+  background: 
+  linear-gradient(90deg,var(--c) 50%,rgb(255, 0, 0) 0) calc(100% - var(--_p,0%))/200% 100%,
+  linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+  background-clip: text,padding-box;
+  transition: 0.4s;
+}
+
+.titles:hover {--_p: 100%}
