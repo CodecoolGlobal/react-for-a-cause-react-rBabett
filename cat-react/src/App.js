@@ -12,7 +12,7 @@ function App() {
   const [ActivePage, setActivePage] = useState('Home');
   
   return (
-    <div>
+    <div id="container">
       <div id="header">
         <Navbar handleClick={setActivePage}/>
       </div>

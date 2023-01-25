@@ -7,7 +7,9 @@
       age: '2 years',
       toy: 'Chew bone',
       title: 'Most photogenic dog of 2023',
-      description: `Gary, our 2 years old cutie has won the "Most Photogenic Dog" award of 2023. Such a victory has only been possible due to all the love and professional care of our workers. Find out more about how diet and routine can affect your dog's looks...`
+      description: `Gary, our 2 years old cutie has won the "Most Photogenic Dog" award of 2023. Such a victory has only been possible due to all the love and professional care of our workers. Find out more about how diet and routine can affect your dog's looks...
+      Photographing your pets is about capturing their personality, their funny and sweet moments and their habits. It requires a certain set of skills and patience to tackle.
+Your pets are unpredictable and fast (unless you have a snail or a turtle). This provides you with all of the subject matter you need to improve.`
     },
     {
       name: 'Lizzie',
@@ -23,7 +25,9 @@
       title: 'Certificated well-trained dog',
       description: `
       Bucket is the prime example of what caring hands can achieve.
-      Rescued as a wild, aggressive puppy, Bucket since then has been rehabitated and is one of the most well-behaved dogs. Families with children and the elderly would love a dog like Bucket at their home...`
+      Rescued as a wild, aggressive puppy, Bucket since then has been rehabitated and is one of the most well-behaved dogs. Families with children and the elderly would love a dog like Bucket at their home.
+      At first, dog training can seem pretty overwhelming, especially if this is your first dog. The truth is that training your dog is a very big project. If you take it step by step, you will find the task to be far less daunting. Here is some information to help get you started:
+      Start a Dog Obedience Program: Learn how to set a basic foundation before you begin to train your dog.`
     },
     {
       name: 'Morgan',
@@ -155,7 +159,8 @@
       age: '3 years',
       toy: 'Ball feeder',
       title: 'Easter bunnies as pets',
-      description: 'There are a lot of myths surrounding pet Easter bunnies. Are they a suitable pet? In this article, we cover every aspect of pet bunnies. Fill a test at the bottom of the page to find out if pet bunnies are for you!...'
+      description: `There are a lot of myths surrounding pet Easter bunnies. Are they a suitable pet? In this article, we cover every aspect of pet bunnies. Fill a test at the bottom of the page to find out if pet bunnies are for you!
+      Among other popular Easter traditions like hot cross buns and exciting egg hunts, the Easter Bunny has long been a well-known and popular symbol associated with the religious holiday — but have you ever wondered where the idea of the Easter Bunny came from and how exactly the cute, fluffy woodland creature became such a prevalent symbol of Easter?`
     },
     {
       name: 'Angel',

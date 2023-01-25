@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,6 +35,11 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+html, body, #root, .App, #container, #animals_container, .articles_container {
+  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -53,7 +58,7 @@ body {
 
 #page {
   margin: 20px;
-  justify-content: flex-end;
+  height: 100%;
 }
 
 .animal_cards {
@@ -112,33 +117,52 @@ body {
 .animals_container {
   padding: auto;
   align-items: center;
+  border: 2px solid black;
+  height: max-content;
 }
-
 
 .articles {
-  display: block;
-  border: 2px solid black;
+  top: 0;
+  position: relative;
+  display: table;
   max-width: 80%;
   text-align: left;
+  height:fit-content;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: linear-gradient(to bottom, rgb(152, 191, 255), rgb(148, 255, 194));
+  transition: top ease-in-out 150ms;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+
 }
+
+.articles:hover {
+  top: -10px;
+}
+
+
 
 .article_images {
   float: left;
   max-width: 45%;
-  max-height: 70%;
+  max-height: 400px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
   height: auto;
   width: auto\9;
-  vertical-align:middle;
-  border-radius: 20px;
   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
     0 5px 15px 0 rgba(0,0,0,0.08);
-  background-color: #ffffff; 
+  background-color: #000000;
 }
 
 .article_info {
-  overflow: hidden;
+  max-width: 55%;
   float: right;
-  background: linear-gradient(to bottom, rgb(152, 191, 255), rgb(148, 255, 194));
+  overflow: hidden;
   
 }
 
@@ -149,10 +173,12 @@ body {
   --s: 0.1em;   /* the thickness of the line */
   --c: #5dacec; /* the color */
 
-  margin-left: 30%;
-  margin-right: 30%;
-  color: white;
-  text-shadow: 2px 2px 7.5px black;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: rgb(89, 87, 156);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   padding-bottom: var(--s);
   background: 
   linear-gradient(90deg,var(--c) 50%,rgb(255, 0, 0) 0) calc(100% - var(--_p,0%))/200% 100%,
@@ -163,3 +189,31 @@ body {
 }
 
 .titles:hover {--_p: 100%}
+
+.descriptions {
+  padding:20px;
+  font-size: 18px;
+}
+
+#header {
+  background-color: #528163;
+  border-bottom: 5px solid #528163;
+}
+
+.navbar_buttons {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  top: 0;
+  background: linear-gradient(to bottom, #4c693f, #3a4928);
+  border: 2px solid #2c151f;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(151, 90, 17);
+  color: rgb(255, 229, 79);
+  transition: top ease-in-out 150ms;
+}
+
+.navbar_buttons:hover {
+  top: -5px;
+  background: linear-gradient(to bottom, #3a4928, #2b361d);
+}
