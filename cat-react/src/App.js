@@ -21,7 +21,7 @@ function App() {
         : (ActivePage === 'Donate') ? (<div>Donate component</div>)
         : (ActivePage === 'Gallery') ? (<Gallery />)
         : (ActivePage === 'Contact') ? (<Contact />)
-        : (<div>Home</div>)
+        : (<Home />)
         }
       </div>
     </div>

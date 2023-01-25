@@ -89,10 +89,11 @@ function Contact(){
       setTimeout(() => {
         setSubmitPage(false)
       }, 10000);
-    } 
-
+    }
   } 
   
+  console.log(submitPage);
+
   if (submitPage === true) {
     contactForm(firstNameInput, lastNameInput, emailInput, subjectInput, messageInput);
     content = 
@@ -102,8 +103,6 @@ function Contact(){
     </div>
     </>
   }
-
-
   return (content);
 }
 

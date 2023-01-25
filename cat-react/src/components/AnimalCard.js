@@ -3,17 +3,19 @@ import Button from "./Button";
 const AnimalCard = ({ animals }) => {
   return (
     <div className="animal_cards">
-      {animals.map(({name, image, age}) => (
+      {animals.map(({name, image, age, toy}) => (
         <div key={name} className="animal_cards_info">
           <img
             key={name + "img"}
             src={image}
             alt={name}
-            className="images"
+            className="card_images"
           />
-          <div clasName="animal_info">
+          <div className="animal_info">
             <h4>{name}</h4>
-            <p>Age: {age}</p>
+            <p>Age: {age}<br></br><br></br>
+              Favorite toy: {toy}
+            </p>
             <Button
               key={name + "btn"}
               className="submit_buttons"

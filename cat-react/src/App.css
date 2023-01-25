@@ -65,24 +65,45 @@ body {
 }
 
 .animal_cards_info {
+  background: linear-gradient(to right, rgb(255, 181, 181), rgb(255, 214, 161));
   margin: 10px;
+  position: relative;
+  top: 0;
   padding: 20px;
-  padding-top: 50px;
+  padding-top: 20px;
   border-style: double;
+  border-top: 1rem;
+  border-bottom: 1rem;
   border-radius: 30px;
   text-align: center;
   min-width: 30%;
   max-width: 70%;
-  height: 500px
+  height: 500px;
+  line-height: 17.5px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  border-right: 0.5rem solid #631d3b;
+  border-left: 0.5rem solid #631d3b;
+  transition: top ease-in-out 150ms;
+
 }
 
-.images {
+.animal_cards_info:hover {
+  top: -10px;
+}
+
+.card_images {
   max-width: 100%;
   max-height: 70%;
   height: auto;
   width: auto\9;
   vertical-align:middle;
-}
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;}
+
 
 .animal_info {
   vertical-align: bottom;
@@ -91,4 +112,32 @@ body {
 .animals_container {
   padding: auto;
   align-items: center;
+}
+
+
+.articles {
+  display: block;
+  border: 2px solid black;
+  max-width: 80%;
+  text-align: left;
+}
+
+.article_images {
+  float: left;
+  max-width: 45%;
+  max-height: 70%;
+  height: auto;
+  width: auto\9;
+  vertical-align:middle;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff; 
+}
+
+.article_info {
+  overflow: hidden;
+  float: right;
+  background: linear-gradient(to bottom, rgb(181, 190, 255), rgb(161, 255, 202));
+  
 }
