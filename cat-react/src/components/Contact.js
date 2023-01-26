@@ -141,7 +141,6 @@ const Contact = (actvivePage) => {
     {messageInputField}
     </div>
     <br></br>
-    <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
   }
 
@@ -188,8 +187,7 @@ const Contact = (actvivePage) => {
         setEmailExist(emailOriginal);
         setSubjectExist(subjectOriginal);
         setMessageExist(messageOriginal);
-        
-      }, 3000);
+      }, 10000);
     } 
   } 
   
@@ -197,15 +195,22 @@ const Contact = (actvivePage) => {
   if (submitPage === true && currentPage === 'Contact') {
     contactForm(firstNameInput, lastNameInput, emailInput, subjectInput, messageInput);
     content = 
-    <><div>
-    We appreciate you contacting us. One of our colleagues will get back in touch with you soon!
-    Have a great day!
+    <><div className="thank_you">
+        <div id="contact_thanks">
+        We appreciate you contacting us. One of our colleagues will get back in touch with you soon!
+      Have a great day!<br></br>
+      ᓚᘏᗢ
+      </div>
     </div>
     </>
   } else if (submitPage === true && currentPage === 'Donate') {
     content = 
-    <><div>
-    AV FD D DT
+    <><div className="thank_you">
+      <div id="donate_thanks">
+      Thank you for your donation!<br></br>
+      Have a great day!<br></br>
+      ᓚᘏᗢ
+      </div>
     </div>
     </>
   }

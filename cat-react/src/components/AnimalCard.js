@@ -14,13 +14,13 @@ const AnimalCard = ({ animals, onAdoptClick }) => {
           />
           <div className="animal_info">
             <h4 className="animal_name">{name}</h4>
-            <p className="age_and_toys">Age: {age}<br></br><br></br>
-              Favorite toy: {toy}
+            <p className="age_and_toys"><b>Age:</b> {age}<br></br><br></br>
+              <b>Favorite toy:</b> {toy}
             </p>
             <Button
               handleClick={onAdoptClick}
               key={name + "btn"}
-              className="submit_buttons"
+              className="adopt_buttons"
               text="Adopt"
             />
           </div>

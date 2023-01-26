@@ -43,6 +43,12 @@ body {
   background-size: cover;
 }
 
+#cat_logo {
+  filter: drop-shadow(15px 10px 10px rgba(0, 0, 0, 0.5));
+  max-width: 10%;
+  max-height: 10%
+}
+
 #header {
   text-align: center;
   width: 100%;
@@ -81,7 +87,7 @@ body {
   text-align: center;
   min-width: 30%;
   max-width: 70%;
-  height: 600px;
+  max-height: 600px;
   line-height: 17.5px;
   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
     0 5px 15px 0 rgba(0,0,0,0.08);
@@ -123,9 +129,11 @@ body {
   position: relative;
   display: table;
   max-width: 80%;
+  max-height: 300px;
+  height: auto;
   text-align: left;
   height:fit-content;
-  border: 2px solid black;
+  border: 20px dotted rgb(244, 166, 99);
   border-radius: 50px;
   margin: auto;
   margin-top: 50px;
@@ -140,6 +148,7 @@ body {
 .articles:hover {
   top: -10px;
   background: linear-gradient(to bottom, rgba(238, 162, 162, 0.8), rgba(242, 200, 145, 0.8));
+  border: 20px dotted rgb(226, 144, 71);
 }
 
 .article_images {
@@ -191,7 +200,7 @@ body {
 }
 
 #header {
-  background: linear-gradient(to bottom, #528163, #466c54);
+  background: linear-gradient(to bottom, #96934e, #375b44);
   border-bottom: 5px double #466c54;
 }
 
@@ -201,7 +210,7 @@ body {
   padding-right: 50px;
   font-size: 25px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: -5px;
   max-width: 100%;
   top: 0;
   background: linear-gradient(to bottom, #4c693f, #3a4928);
@@ -219,6 +228,16 @@ body {
 .navbar_buttons:hover {
   top: -5px;
   background: linear-gradient(to bottom, #3a4928, #2b361d);
+  color: color-change;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: color-change;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% { color: rgb(247, 178, 68); }
+  50% { color: rgb(255, 255, 255); }
+  100% { color: rgb(247, 178, 68); }
 }
 
 .animal_name {
@@ -231,7 +250,7 @@ body {
   font-size: 17px;
 }
 
-.submit_buttons {
+.adopt_buttons {
   font-size: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 600;
@@ -244,7 +263,7 @@ body {
   color: #342606;
 }
 
-.submit_buttons:hover {
+.adopt_buttons:hover {
   background: linear-gradient(to bottom, rgb(221, 62, 62), rgb(221, 134, 21));
   border: 5px solid rgb(170, 18, 18); 
 }
@@ -307,7 +326,7 @@ body {
   display:flexbox;
   width: 40%;
   background: linear-gradient(to bottom, rgba(137, 110, 72, 0.8), rgba(63, 107, 63, 0.8));
-  border: 1px solid black;
+  border: 10px dotted rgb(228, 159, 40);
   border-radius: 100px
 }
 
@@ -321,6 +340,10 @@ body {
 }
 
 .input {
+  font-weight: bolder;
+  color:rgb(41, 52, 22);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(47, 60, 3);
   font-size: 20px;
 }
 
@@ -328,6 +351,9 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   width: 80%;
   font-size: 16px;
+  border-style: inset;
+  border-width: 2px;
+  border-color:rgb(100, 6, 80);
   background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
   height: 25%;
 }
@@ -342,4 +368,51 @@ body {
   width: 400px;
   height: 250px;
   vertical-align: top;
+}
+
+.thank_you {
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(166, 61, 54);
+  position: center;
+  margin: auto;
+  display:flexbox;
+  font-size: 22px;
+  padding: 20px;
+  width: 70%;
+  background: linear-gradient(-45deg, #e48383, #f4a6d2, #f1ef9d, #e9b75b);
+  border: 10px dotted rgb(236, 117, 117);
+  border-radius: 100px;
+}
+
+.thanks_message {
+  display:contents;
+  vertical-align: middle;
+  text-align: center;
+  min-height: 5rem;
+  max-height: max-content;
+  margin: 0 auto;
+}
+
+.submit_buttons {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
+  box-shadow: 2.5px 5px 7.5px 3px rgba(0,0,0,0.15),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  border: 5px solid rgb(107, 129, 38); 
+  border-end-start-radius: 20px;
+  border-start-end-radius: 20px;
+  color:rgb(41, 52, 22);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(47, 60, 3);
+}
+
+.submit_buttons:hover {
+  background: linear-gradient(-45deg, #6b5a49, #6b754f, #97977a, #928773);
+  border: 5px solid rgb(69, 84, 25);
+  color:rgb(22, 28, 11);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(20, 26, 0);
 }
