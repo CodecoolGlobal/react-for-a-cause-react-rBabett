@@ -32,22 +32,6 @@
   }
 } */
 
-.contactInput {
-  width: 400px;
-  background-color: lightblue;
-  display: flexbox;
-}
-
-.contactMessageInput {
-  background-color: lightblue;
-  word-wrap: break-word;
-  resize: none;
-  text-align: -webkit-center;
-  width: 400px;
-  height: 250px;
-  vertical-align: top;
-}
-
 html, body, #root, .App, #container, #animals_container, .articles_container {
   height: 100%;
   min-height: 100vh;
@@ -270,6 +254,10 @@ body {
   display:table;
   background: linear-gradient(to bottom, rgba(29, 70, 31, 0.7), rgba(87, 56, 20, 0.7));
   align-content: center;
+  border-radius: 10%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .about_text {
@@ -310,4 +298,48 @@ body {
 
 .about_titles:hover {
   --_p: 100%
+}
+
+.contacform {
+  text-align: center;
+  position: center;
+  margin: auto;
+  display:flexbox;
+  width: 40%;
+  background: linear-gradient(to bottom, rgba(137, 110, 72, 0.8), rgba(63, 107, 63, 0.8));
+  border: 1px solid black;
+  border-radius: 100px
+}
+
+.input_segments {
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 5rem;
+  max-height: max-content;
+  margin: 0 auto;
+}
+
+.input {
+  font-size: 20px;
+}
+
+.contactInput {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 80%;
+  font-size: 16px;
+  background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
+  height: 25%;
+}
+
+.contactMessageInput {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
+  word-wrap: break-word;
+  font-size: 16px;
+  resize: none;
+  text-align: -webkit-center;
+  width: 400px;
+  height: 250px;
+  vertical-align: top;
 }

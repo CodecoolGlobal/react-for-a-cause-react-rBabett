@@ -78,16 +78,32 @@ function Contact(){
   }
  
   let content = 
-    <div className="contacform"><p>First Name:</p>
+    <div className="contacform">
+
+    <div className="input_segments">
+    <p className="input">First Name:</p>
     {firstNameInputField}
-    <p>Last Name:</p>
+    </div>
+
+    <div className="input_segments">
+    <p className="input">Last Name:</p>
     {lastNameInputField}
-    <p>E-mail:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">E-mail:</p>
     {emailInputField}
-    <p>Subject:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">Subject:</p>
     {subjectInputField}
-    <p>Message:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">Message:</p>
     {messageInputField}
+    </div>
     <br></br>
     <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
