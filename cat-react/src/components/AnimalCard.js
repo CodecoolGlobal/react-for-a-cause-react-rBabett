@@ -1,6 +1,7 @@
 import Button from "./Button";
+import Home from "./Home";
 
-const AnimalCard = ({ animals }) => {
+const AnimalCard = ({ animals, onAdoptClick }) => {
   return (
     <div className="animal_cards">
       {animals.map(({name, image, age, toy}) => (
@@ -17,6 +18,7 @@ const AnimalCard = ({ animals }) => {
               Favorite toy: {toy}
             </p>
             <Button
+              handleClick={onAdoptClick}
               key={name + "btn"}
               className="submit_buttons"
               text="Adopt"

@@ -2,7 +2,7 @@ import AnimalCard from './AnimalCard';
 import {useEffect, useState} from 'react';
 import animals from './AnimalsObject';
 
-const Gallery = () => {
+const Gallery = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -15,11 +15,10 @@ const Gallery = () => {
     })
   }, [])
 
-  console.log(images);
 
   return (
     <div id="animals_container">
-        <AnimalCard animals={images}/>
+        <AnimalCard onAdoptClick={props.onAdoptClick} animals={images} />
     </div>
   )
 }

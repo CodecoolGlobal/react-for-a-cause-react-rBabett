@@ -124,6 +124,11 @@ const Contact = (actvivePage) => {
     <p className="input">E-mail:</p>
     {emailInputField}
     </div>
+
+    <div className="input_segments">
+    <p className="input">Donate:</p>
+    {donateInputField}
+    </div>
     
     <div className="input_segments">
     <p className="input">Subject:</p>
@@ -142,6 +147,8 @@ const Contact = (actvivePage) => {
 
 
   function submitKey() {
+
+    
     
     for (let i = 0; i < contactInputs.length; i++){
 
@@ -185,14 +192,19 @@ const Contact = (actvivePage) => {
     } 
   } 
   
-  console.log(submitPage);
 
-  if (submitPage === true) {
+  if (submitPage === true && currentPage === 'Contact') {
     contactForm(firstNameInput, lastNameInput, emailInput, subjectInput, messageInput);
     content = 
     <><div>
     We appreciate you contacting us. One of our colleagues will get back in touch with you soon!
     Have a great day!
+    </div>
+    </>
+  } else if (submitPage === true && currentPage === 'Donate') {
+    content = 
+    <><div>
+    AV FD D DT
     </div>
     </>
   }
