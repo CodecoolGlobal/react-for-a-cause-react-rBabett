@@ -105,7 +105,6 @@ function Contact(){
     {messageInputField}
     </div>
     <br></br>
-    <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
 
 
@@ -148,7 +147,7 @@ function Contact(){
         setEmailExist(emailOriginal);
         setSubjectExist(subjectOriginal);
         setMessageExist(messageOriginal);
-      }, 3000);
+      }, 10000);
     } 
 
   } 
@@ -158,9 +157,12 @@ function Contact(){
   if (submitPage === true) {
     contactForm(firstNameInput, lastNameInput, emailInput, subjectInput, messageInput);
     content = 
-    <><div>
-    We appreciate you contacting us. One of our colleagues will get back in touch with you soon!
-    Have a great day!
+    <><div className="thank_you">
+        <div id="contact_thanks">
+      We appreciate you contacting us. One of our colleagues will get back in touch with you soon!
+      Have a great day!<br></br>
+      ᓚᘏᗢ
+      </div>
     </div>
     </>
   }
