@@ -2,9 +2,15 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contactInput {
+  width: 400px;
+  background-color: lightblue;
+}
+
+.contactMessageInput {
+  background-color: lightblue;
+  width: 400px;
+  height: 250px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
