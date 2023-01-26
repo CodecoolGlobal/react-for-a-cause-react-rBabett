@@ -1,15 +1,345 @@
+/* .App {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+html, body, #root, .App, #container, #animals_container, .articles_container {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: url(./images/Wood-Texture.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#header {
+  text-align: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+#page {
+  margin: 20px;
+  height: 100%;
+}
+
+.animal_cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  
+}
+
+.animal_cards_info {
+  background: linear-gradient(to right, rgba(255, 181, 181, 0.9), rgba(255, 214, 161, 0.9));
+  margin: 10px;
+  position: relative;
+  top: 0;
+  padding: 20px;
+  padding-top: 20px;
+  border-style: double;
+  border-top: 1rem;
+  border-bottom: 1rem;
+  border-radius: 30px;
+  text-align: center;
+  min-width: 30%;
+  max-width: 70%;
+  height: 600px;
+  line-height: 17.5px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  border-right: 0.5rem solid #631d3b;
+  border-left: 0.5rem solid #631d3b;
+  transition: top ease-in-out 150ms;
+
+}
+
+.animal_cards_info:hover {
+  top: -10px;
+}
+
+.card_images {
+  max-width: 100%;
+  max-height: 70%;
+  height: auto;
+  width: auto\9;
+  vertical-align:middle;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;}
+
+
+.animal_info {
+  vertical-align: bottom;
+}
+
+.animals_container {
+  padding: auto;
+  align-items: center;
+  border: 2px solid black;
+  height: max-content;
+}
+
+.articles {
+  top: 0;
+  position: relative;
+  display: table;
+  max-width: 80%;
+  text-align: left;
+  height:fit-content;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: linear-gradient(to bottom, rgba(255, 181, 181, 0.8), rgba(255, 214, 161, 0.8));
+  transition: top ease-in-out 150ms;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+
+}
+
+.articles:hover {
+  top: -10px;
+  background: linear-gradient(to bottom, rgba(238, 162, 162, 0.8), rgba(242, 200, 145, 0.8));
+}
+
+.article_images {
+  float: left;
+  max-width: 45%;
+  max-height: 400px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: auto;
+  width: auto\9;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #000000;
+}
+
+.article_info {
+  max-width: 55%;
+  float: right;
+  overflow: hidden;
+  
+}
+
+.titles {
+  font-size: 30px;
+  text-align: center;
+  
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #bd1490; /* the color */
+
+  margin-left: 10%;
+  margin-right: 10%;
+  color: rgb(159, 0, 122);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(100, 6, 80);
+  padding-bottom: var(--s);
+  background: 
+  linear-gradient(90deg,var(--c) 50%,rgb(255, 0, 0) 0) calc(100% - var(--_p,0%))/200% 100%,
+  linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+  background-clip: text,padding-box;
+  transition: 0.4s;
+}
+
+.titles:hover {--_p: 100%}
+
+.descriptions {
+  padding:20px;
+  font-size: 18px;
+}
+
+#header {
+  background: linear-gradient(to bottom, #528163, #466c54);
+  border-bottom: 5px double #466c54;
+}
+
+.navbar_buttons {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  top: 0;
+  background: linear-gradient(to bottom, #4c693f, #3a4928);
+  border: 2px solid #2e3b1a;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(151, 90, 17);
+  border-start-end-radius: 20px;
+  border-start-start-radius: 20px;
+  color: rgb(255, 229, 79);
+  transition: top ease-in-out 150ms;
+  box-shadow: 0 15px 10px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+.navbar_buttons:hover {
+  top: -5px;
+  background: linear-gradient(to bottom, #3a4928, #2b361d);
+}
+
+.animal_name {
+  font-size: 25px;
+  font-style: italic;
+  text-decoration: wavy underline rgba(151, 42, 42, 0.5);
+}
+
+.age_and_toys {
+  font-size: 17px;
+}
+
+.submit_buttons {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  background: linear-gradient(to bottom, rgb(239, 86, 86), rgb(255, 165, 47));
+  box-shadow: 2.5px 5px 7.5px 3px rgba(0,0,0,0.15),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  border: 5px solid rgb(243, 50, 50); 
+  border-end-end-radius: 20px;
+  border-start-start-radius: 20px;
+  color: #342606;
+}
+
+.submit_buttons:hover {
+  background: linear-gradient(to bottom, rgb(221, 62, 62), rgb(221, 134, 21));
+  border: 5px solid rgb(170, 18, 18); 
+}
+
+#about_component {
+  width: 100%;
+  display:table;
+  background: linear-gradient(to bottom, rgba(29, 70, 31, 0.7), rgba(87, 56, 20, 0.7));
+  align-content: center;
+  border-radius: 10%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.about_text {
+  position:static;
+  text-align: justify-all;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 18px;
+  color: #ffedc4;
+}
+
+.paragraph {
+  display:contents;
+  width: 80%;
+  background: linear-gradient(to bottom, rgb(137, 110, 72), rgb(63, 107, 63));
+}
+
+.about_titles {
+  font-size: 30px;
+  text-align: center;
+  
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #d09a1d; /* the color */
+
+  margin-left: 10%;
+  margin-right: 10%;
+  color: rgb(220, 233, 44);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(247, 190, 121);
+  padding-bottom: var(--s);
+  background: 
+  linear-gradient(90deg,var(--c) 50%,rgb(255, 0, 0) 0) calc(100% - var(--_p,0%))/200% 100%,
+  linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+  background-clip: text,padding-box;
+  transition: 0.4s;
+}
+
+.about_titles:hover {
+  --_p: 100%
+}
+
+.contacform {
+  text-align: center;
+  position: center;
+  margin: auto;
+  display:flexbox;
+  width: 40%;
+  background: linear-gradient(to bottom, rgba(137, 110, 72, 0.8), rgba(63, 107, 63, 0.8));
+  border: 1px solid black;
+  border-radius: 100px
+}
+
+.input_segments {
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+  min-height: 5rem;
+  max-height: max-content;
+  margin: 0 auto;
+}
+
+.input {
+  font-size: 20px;
+}
+
 .contactInput {
-  width: 400px;
-  background-color: lightblue;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 80%;
+  font-size: 16px;
+  background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
+  height: 25%;
 }
 
 .contactMessageInput {
-  background-color: lightblue;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: linear-gradient(-45deg, #977f67, #9cab74, #dbdab0, #cfbfa2);
+  word-wrap: break-word;
+  font-size: 16px;
+  resize: none;
+  text-align: -webkit-center;
   width: 400px;
   height: 250px;
-}
-
-
-.navbar_buttons {
-  font-size: 20px;
+  vertical-align: top;
 }

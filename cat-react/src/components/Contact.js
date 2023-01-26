@@ -108,18 +108,32 @@ const Contact = (actvivePage) => {
     let donateInputField = <Input placeholder={contactInputs[5].placeholder} size={contactInputs[5].size} value={contactInputs[5].value} onInput={contactInputs[5].onInput} className="contactInput"/>;
     
     content = 
-    <div className="contacform"><p>First Name:</p>
+    <div className="contacform">
+
+    <div className="input_segments">
+    <p className="input">First Name:</p>
     {firstNameInputField}
-    <p>Last Name:</p>
+    </div>
+
+    <div className="input_segments">
+    <p className="input">Last Name:</p>
     {lastNameInputField}
-    <p>E-mail:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">E-mail:</p>
     {emailInputField}
-    <p>Donate:</p>
-    {donateInputField}
-    <p>Subject:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">Subject:</p>
     {subjectInputField}
-    <p>Message:</p>
+    </div>
+    
+    <div className="input_segments">
+    <p className="input">Message:</p>
     {messageInputField}
+    </div>
     <br></br>
     <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
@@ -171,6 +185,8 @@ const Contact = (actvivePage) => {
     } 
   } 
   
+  console.log(submitPage);
+
   if (submitPage === true) {
     contactForm(firstNameInput, lastNameInput, emailInput, subjectInput, messageInput);
     content = 
@@ -180,8 +196,7 @@ const Contact = (actvivePage) => {
     </div>
     </>
   }
-
-  return content;
+  return (content);
 }
 
 function contactForm (firstNameInput, lastNameInput, emailInput, subjectInput, messageInput) {
