@@ -12,8 +12,8 @@ const AnimalCard = ({ animals }) => {
             className="card_images"
           />
           <div className="animal_info">
-            <h4>{name}</h4>
-            <p>Age: {age}<br></br><br></br>
+            <h4 className="animal_name">{name}</h4>
+            <p className="age_and_toys">Age: {age}<br></br><br></br>
               Favorite toy: {toy}
             </p>
             <Button

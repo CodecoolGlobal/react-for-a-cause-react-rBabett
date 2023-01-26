@@ -30,9 +30,7 @@ const Navbar = ({handleClick}) => {
   const headerButtons = buttons.map(button => (<Button key={button.name} className='navbar_buttons' text={button.name} handleClick={button.handle}/>))
   
   return (
-    <div id="header">
       <div>{headerButtons}</div>
-    </div>
     )
   }
 
