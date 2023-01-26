@@ -32,7 +32,7 @@ Your pets are unpredictable and fast (unless you have a snail or a turtle). This
     {
       name: 'Morgan',
       image: 'puppy4.jpg',
-      age: '3 years',
+      age: '1 and a half years',
       toy: 'Plushies',
     },
     {
@@ -130,7 +130,7 @@ Your pets are unpredictable and fast (unless you have a snail or a turtle). This
     {
       name: 'Button',
       image: 'hamster6.jpg',
-      age: '15 months',
+      age: '150 years',
       toy: 'Children\'s souls',
       title: 'Pet rescued from unethical breeder',
       description: `Breeding animals is quite a sensitive subject. Button is part of the family that has been rescued from an unethical breeding group. Breeding, if done unethically, can cause the death of many animals within a family and increase the chances of inbreeding. Find out more about ethical breeding and Button, who is now up for adoption...`
