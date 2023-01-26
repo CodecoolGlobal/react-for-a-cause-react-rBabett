@@ -16,9 +16,9 @@ function App() {
       </div>
       <div id="page">
         {(ActivePage === 'About') ? (<About />) 
-        : (ActivePage === 'Donate') ? (<div>Donate component</div>)
+        : (ActivePage === 'Donate') ? (<Contact actvivePage={ActivePage} />)
         : (ActivePage === 'Gallery') ? (<div>Gallery component</div>)
-        : (ActivePage === 'Contact') ? (<Contact />)
+        : (ActivePage === 'Contact') ? (<Contact ActivePage={ActivePage} />)
         : (<div>Home</div>)
         }
       </div>

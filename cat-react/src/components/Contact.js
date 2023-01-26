@@ -1,32 +1,38 @@
 import Button from "./Button";
 import Input from "./Input";
 import { useState } from 'react';
+import donatePage from "./Donate";
 
+const Contact = (actvivePage) => {
 
-function Contact(){
+  let currentPage = Object.values(actvivePage).join('');
+
+  
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [subjectInput, setSubjectInput] = useState('');
   const [messageInput, setMessageInput] = useState('');
-
+  const [donateInput, setDonateInput] = useState('$');
+  
   let firstNameOriginal = 'Hannibal';
   let lastNameOriginal = 'Lecter';
   let emailOriginal = 'hannibal.lecter@freshmeat.com';
   let subjectOriginal = 'Job inquiry';
-  let messageOriginal = 'I have a question: Do you have any cute animal?'
-
+  let messageOriginal = 'I have a question: Do you have any cute animal?';
+  let donateOriginal = '$';
+  
   const [firstNameExist, setFirstNameExist] = useState(firstNameOriginal);
   const [lastNameExist, setLastNameExist] = useState(lastNameOriginal);
   const [emailExist, setEmailExist] = useState(emailOriginal);
   const [subjectExist, setSubjectExist] = useState(subjectOriginal);
   const [messageExist, setMessageExist] = useState(messageOriginal);
-
-
+  const [donateExist, setDonateExist] = useState(donateOriginal);
+  
+  
   const [submitPage, setSubmitPage] = useState(false);
-
+  
   let empty = true;
-
 
   const contactInputs = [{
     name: 'First Name',
@@ -53,32 +59,36 @@ function Contact(){
     name: 'Subject',
     placeholder: subjectExist,
     size: 24,
-    value: subjectInput,
+    value: (currentPage === 'Donate') ? 'Donation' : subjectInput,
     change: (e) => setSubjectExist(e),
     onInput: (e) => setSubjectInput(e.target.value),
   }, {
     name: 'Message',
     placeholder: messageExist,
     size: 24,
-    value: messageInput,
+    value: (currentPage === 'Donate') ? 
+    `Hello my name is ${firstNameInput} ${lastNameInput} and I want to donate ${donateInput}` 
+    : messageInput,
     change: (e) => setMessageExist(e),
     onInput: (e) => setMessageInput(e.target.value),
   }];
-
+  
   let firstNameInputField = <Input placeholder={contactInputs[0].placeholder} size={contactInputs[0].size} value={contactInputs[0].value} onInput={contactInputs[0].onInput} className="contactInput"/>
   let lastNameInputField = <Input placeholder={contactInputs[1].placeholder} size={contactInputs[1].size} value={contactInputs[1].value} onInput={contactInputs[1].onInput} className="contactInput" />;
   let emailInputField = <Input placeholder={contactInputs[2].placeholder} size={contactInputs[2].size} value={contactInputs[2].value} onInput={contactInputs[2].onInput} className="contactInput"/>;
   let subjectInputField = <Input placeholder={contactInputs[3].placeholder} size={contactInputs[3].size} value={contactInputs[3].value} onInput={contactInputs[3].onInput} className="contactInput"/>;
   let messageInputField = <Input placeholder={contactInputs[4].placeholder} size={contactInputs[4].size} value={contactInputs[4].value} onInput={contactInputs[4].onInput} className="contactMessageInput"/>;
-  
-  let filteredValue = contactInputs.filter(input => (input.value));
 
+
+  let filteredValue = contactInputs.filter(input => (input.value));
+  
   if (filteredValue.length === contactInputs.length) {
     empty = false;
   }
- 
+
+
   let content = 
-    <div className="contacform"><p>First Name:</p>
+  <div className="contacform"><p>First Name:</p>
     {firstNameInputField}
     <p>Last Name:</p>
     {lastNameInputField}
@@ -92,13 +102,37 @@ function Contact(){
     <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
 
+  if (currentPage === 'Donate'){
+    donatePage(contactInputs, donateExist, donateInput, setDonateExist, setDonateInput);
+
+    let donateInputField = <Input placeholder={contactInputs[5].placeholder} size={contactInputs[5].size} value={contactInputs[5].value} onInput={contactInputs[5].onInput} className="contactInput"/>;
+    
+    content = 
+    <div className="contacform"><p>First Name:</p>
+    {firstNameInputField}
+    <p>Last Name:</p>
+    {lastNameInputField}
+    <p>E-mail:</p>
+    {emailInputField}
+    <p>Donate:</p>
+    {donateInputField}
+    <p>Subject:</p>
+    {subjectInputField}
+    <p>Message:</p>
+    {messageInputField}
+    <br></br>
+    <br></br>
+    <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
+  }
+
+
 
   function submitKey() {
-
+    
     for (let i = 0; i < contactInputs.length; i++){
 
       let legitEmail = contactInputs[2].value;
-
+      
       
       if (contactInputs[i].value === '') {
         Object.values(contactInputs[i])[4](`Please fill ${contactInputs[i].name} section`);
@@ -119,7 +153,7 @@ function Contact(){
 
     if (empty === false) {
       setSubmitPage(true);
-  
+      
       setTimeout(() => {
         setSubmitPage(false);
         setFirstNameInput('');
@@ -132,9 +166,9 @@ function Contact(){
         setEmailExist(emailOriginal);
         setSubjectExist(subjectOriginal);
         setMessageExist(messageOriginal);
+        
       }, 3000);
     } 
-
   } 
   
   if (submitPage === true) {
@@ -147,8 +181,7 @@ function Contact(){
     </>
   }
 
-
-  return (content);
+  return content;
 }
 
 function contactForm (firstNameInput, lastNameInput, emailInput, subjectInput, messageInput) {
@@ -159,7 +192,7 @@ function contactForm (firstNameInput, lastNameInput, emailInput, subjectInput, m
     subject: subjectInput,
     message: messageInput,
   }
-
+  
   return console.log(form)
 }
 
