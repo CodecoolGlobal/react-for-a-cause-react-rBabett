@@ -172,7 +172,7 @@ const Contact = (actvivePage) => {
       
       if (contactInputs[i].value === '') {
         Object.values(contactInputs[i])[4](`Please fill ${contactInputs[i].name} section`);
-      }else if (
+      } else if (
         legitEmail !== '' && ( 
         legitEmail.includes('@') === false ||
         legitEmail.indexOf('@') < 4 ||
@@ -182,7 +182,7 @@ const Contact = (actvivePage) => {
         ){
         setEmailInput('');
         Object.values(contactInputs[2])[4](`Please give me a legit e-mail`)
-      }else {
+      } else {
         typeMiss = false;
       }
     }
