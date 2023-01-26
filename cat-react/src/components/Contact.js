@@ -19,7 +19,7 @@ const Contact = (actvivePage) => {
   let lastNameOriginal = 'Lecter';
   let emailOriginal = 'hannibal.lecter@freshmeat.com';
   let subjectOriginal = 'Job inquiry';
-  let messageOriginal = 'I have a question: Do you have any cute animal?';
+  let messageOriginal = 'I have a question: Do you have any cute animals?';
   let donateOriginal = '$';
   
   const [firstNameExist, setFirstNameExist] = useState(firstNameOriginal);
