@@ -177,7 +177,7 @@ const Contact = (actvivePage) => {
         legitEmail.includes('@') === false ||
         legitEmail.indexOf('@') < 4 ||
         legitEmail.includes('.') === false ||
-        legitEmail.indexOf('.') !== contactInputs[2].value.length - 4 ||
+        legitEmail.indexOf('.') !== contactInputs[2].value.length - 3 ||
         legitEmail.match(/[A-Z]/) !== null)
         ){
         setEmailInput('');
