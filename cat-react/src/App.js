@@ -6,13 +6,18 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import catlogo from './images/cat-logo.png';
+import Donate from './components/Donate'
 
 
 function App() {
-  const [ActivePage, setActivePage] = useState('Home');
+  const [activePage, setActivePage] = useState('Home');
 
   function switchToContactPage() {
     setActivePage('Contact');
+  }
+
+  function switchToHomePage() {
+    setActivePage('Home');
   }
   
   return (
@@ -22,10 +27,10 @@ function App() {
         <Navbar handleClick={setActivePage}/>
       </div>
       <div id="page">
-        {(ActivePage === 'About') ? (<About />) 
-        : (ActivePage === 'Donate') ? (<Contact actvivePage={ActivePage} />)
-        : (ActivePage === 'Gallery') ? (<Gallery onAdoptClick={switchToContactPage}/>)
-        : (ActivePage === 'Contact') ? (<Contact ActivePage={ActivePage} />)
+        {(activePage === 'About') ? (<About />) 
+        : (activePage === 'Donate') ? (<Contact  actvivePage={activePage} switchPage={switchToHomePage}/>)
+        : (activePage === 'Gallery') ? (<Gallery onAdoptClick={switchToContactPage}/>)
+        : (activePage === 'Contact') ? (<Contact  activePage={activePage} switchPage={switchToHomePage}/>)
         : (<Home />)
         }
       </div>
