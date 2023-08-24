@@ -7,7 +7,6 @@ const Contact = (actvivePage) => {
 
   let currentPage = Object.values(actvivePage).join('');
 
-  
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -28,7 +27,6 @@ const Contact = (actvivePage) => {
   const [subjectExist, setSubjectExist] = useState(subjectOriginal);
   const [messageExist, setMessageExist] = useState(messageOriginal);
   const [donateExist, setDonateExist] = useState(donateOriginal);
-  
   
   const [submitPage, setSubmitPage] = useState(false);
   
@@ -74,19 +72,17 @@ const Contact = (actvivePage) => {
     onInput: (e) => setMessageInput(e.target.value),
   }];
   
-  let firstNameInputField = <Input placeholder={contactInputs[0].placeholder} size={contactInputs[0].size} value={contactInputs[0].value} onInput={contactInputs[0].onInput} className="contactInput"/>
-  let lastNameInputField = <Input placeholder={contactInputs[1].placeholder} size={contactInputs[1].size} value={contactInputs[1].value} onInput={contactInputs[1].onInput} className="contactInput" />;
-  let emailInputField = <Input placeholder={contactInputs[2].placeholder} size={contactInputs[2].size} value={contactInputs[2].value} onInput={contactInputs[2].onInput} className="contactInput"/>;
-  let subjectInputField = <Input placeholder={contactInputs[3].placeholder} size={contactInputs[3].size} value={contactInputs[3].value} onInput={contactInputs[3].onInput} className="contactInput"/>;
-  let messageInputField = <Input placeholder={contactInputs[4].placeholder} size={contactInputs[4].size} value={contactInputs[4].value} onInput={contactInputs[4].onInput} className="contactMessageInput"/>;
-
+  let firstNameInputField = <Input placeholder={contactInputs[0].placeholder} size={contactInputs[0].size} value={contactInputs[0].value} onInput={contactInputs[0].onInput} className="contactInput" type="text"/>
+  let lastNameInputField = <Input placeholder={contactInputs[1].placeholder} size={contactInputs[1].size} value={contactInputs[1].value} onInput={contactInputs[1].onInput} className="contactInput" type="text"/>;
+  let emailInputField = <Input placeholder={contactInputs[2].placeholder} size={contactInputs[2].size} value={contactInputs[2].value} onInput={contactInputs[2].onInput} className="contactInput" type="email"/>;
+  let subjectInputField = <Input placeholder={contactInputs[3].placeholder} size={contactInputs[3].size} value={contactInputs[3].value} onInput={contactInputs[3].onInput} className="contactInput" type="text"/>;
+  let messageInputField = <Input placeholder={contactInputs[4].placeholder} size={contactInputs[4].size} value={contactInputs[4].value} onInput={contactInputs[4].onInput} className="contactMessageInput" type="text"/>;
 
   let filteredValue = contactInputs.filter(input => (input.value));
   
   if (filteredValue.length === contactInputs.length) {
     empty = false;
   }
-
 
   let content = 
   <div className="contacform">
@@ -121,7 +117,7 @@ const Contact = (actvivePage) => {
   if (currentPage === 'Donate'){
     donatePage(contactInputs, donateExist, donateInput, setDonateExist, setDonateInput);
 
-    let donateInputField = <Input placeholder={contactInputs[5].placeholder} size={contactInputs[5].size} value={contactInputs[5].value} onInput={contactInputs[5].onInput} className="contactInput"/>;
+    let donateInputField = <Input placeholder={contactInputs[5].placeholder} size={contactInputs[5].size} value={contactInputs[5].value} onInput={contactInputs[5].onInput} className="contactInput" type="text"/>;
     
     content = 
     <div className="contacform">
