@@ -1,5 +1,4 @@
 import Button from "./Button";
-import Home from "./Home";
 
 const AnimalCard = ({ animals, onAdoptClick }) => {
   return (
