@@ -158,34 +158,7 @@ const Contact = (actvivePage) => {
     <br></br>
     <Button className="submit_buttons" text='Submit' handleClick={submitKey}/></div>;
   }
-
-
-
   function submitKey() {
-
-    
-    
-    for (let i = 0; i < contactInputs.length; i++){
-
-      let legitEmail = contactInputs[2].value;
-      
-      
-      if (contactInputs[i].value === '') {
-        Object.values(contactInputs[i])[4](`Please fill ${contactInputs[i].name} section`);
-      } else if (
-        legitEmail !== '' && ( 
-        legitEmail.includes('@') === false ||
-        legitEmail.indexOf('@') < 4 ||
-        legitEmail.includes('.') === false ||
-        legitEmail.indexOf('.') !== contactInputs[2].value.length - 3 ||
-        legitEmail.match(/[A-Z]/) !== null)
-        ){
-        setEmailInput('');
-        Object.values(contactInputs[2])[4](`Please give me a legit e-mail`)
-      } else {
-        typeMiss = false;
-      }
-    }
 
     if (empty === false && typeMiss === false) {
       setSubmitPage(true);
