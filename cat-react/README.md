@@ -6,3 +6,13 @@ Founded in 1989, CAT is the United Nations agency that connects nations, partner
 
 # What we do
 CAT promotes healthier lives for the cute animals – from pregnancy care through old age. We lead shelters all around the world where we care for animals we rescued and ensure they will find a better home.
+
+# Start the project
+ 
+ 1. Clone the project on the local directory and open it.
+
+ 2. Follow the commands:
+                        - cd cat-react
+                        - npm i
+                        - npm start
+ 
